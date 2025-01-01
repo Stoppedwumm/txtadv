@@ -9,6 +9,10 @@ welcome() {
     echo "-----------------------------------"
 }
 
+end() {
+    echo "-----------------------------------"
+}
+
 # Function for the first decision
 forest_path() {
     echo "You find yourself at the edge of a dark forest."
@@ -41,10 +45,12 @@ fork_path() {
         1)
             echo "The left path leads you to a hidden treasure chest!"
             echo "Congratulations, you've found the treasure and won the game!"
+            end
             exit 0
             ;;
         2)
             echo "The right path leads to a deep pit. You fall and lose the game."
+            end
             exit 0
             ;;
         *)
@@ -65,11 +71,13 @@ village() {
         1)
             echo "You buy the map and discover a shortcut to the treasure."
             echo "Following the map, you find the treasure and win the game!"
+            end
             exit 0
             ;;
         2)
             echo "You refuse the offer and wander aimlessly."
             echo "Unfortunately, you get lost and the game ends."
+            end
             exit 0
             ;;
         *)
@@ -82,4 +90,3 @@ village() {
 # Start the game
 welcome
 forest_path
-echo "========================================================================="
